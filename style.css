@@ -1,9 +1,10 @@
 body, html {
   margin: 0;
   padding: 0;
-  background: radial-gradient(ellipse at center, #000 0%, #111 100%);
+  background: radial-gradient(ellipse at center, #000 0%, #080808 100%);
   overflow: hidden;
   height: 100vh;
+  font-family: sans-serif;
 }
 
 .space {
@@ -20,11 +21,35 @@ body, html {
 }
 
 .event-horizon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: black;
-  box-shadow: 0 0 60px 30px rgba(0, 0, 0, 0.8);
-  z-index: 2;
+  background: radial-gradient(circle, #000 30%, #111 100%);
+  box-shadow: 0 0 80px 40px rgba(0, 0, 0, 0.9);
+  z-index: 3;
   position: absolute;
+}
+
+.lens-glow {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  z-index: 1;
+  filter: blur(15px);
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 }
